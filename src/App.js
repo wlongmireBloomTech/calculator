@@ -11,6 +11,10 @@ import {applyNumber, changeOperation, clearDisplay, addMemory, clearMemory, reca
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const handleAddOne = (number)=>{
+    dispatch(applyNumber(number));
+  };
+
   const handleNumberClick = (number)=>{
     dispatch(applyNumber(number));
   };
@@ -55,8 +59,8 @@ function App() {
             
             <AnswerDisplay value={state.total}/>
             <div className="row details">
-              <span><b>Operation:</b> {state.operation}</span>
-              <span><b>Memory:</b> {state.memory}</span>
+              <span id="operation"><b>Operation:</b> <i>{state.operation}</i></span>
+              <span id="memory"><b>Memory:</b> {state.memory}</span>
             </div>
             
             <div className="row">
