@@ -3,7 +3,7 @@ import reducer, {initialState} from './reducers';
 
 import './App.css';
 
-import AnswerDisplay from './components/AnswerDisplay';
+import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 
 import {applyNumber, changeOperation, clearDisplay, addMemory, clearMemory, recallMemory} from './actions';
@@ -57,7 +57,7 @@ function App() {
         <div className="col-md-12 d-flex justify-content-center">
           <form name="Cal">
             
-            <AnswerDisplay value={state.total}/>
+            <TotalDisplay value={state.total}/>
             <div className="row details">
               <span id="operation"><b>Operation:</b> <i>{state.operation}</i></span>
               <span id="memory"><b>Memory:</b> {state.memory}</span>
